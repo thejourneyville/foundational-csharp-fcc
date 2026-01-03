@@ -40,7 +40,7 @@ public static class ArrayChallenge
 
         // display the header row for scores/grades
         Console.Clear();
-        Console.WriteLine("Student\t\tGrade\tLetter Grade\n");
+        Console.WriteLine("Student\t\tExam Score\tOverall\tGrade\tExtra Credit\n");
 
         /*
         The outer foreach loop is used to:
@@ -65,12 +65,18 @@ public static class ArrayChallenge
 
             else if (currentStudent == "Logan")
                 studentScores = loganScores;
-
+            
             int sumAssignmentScores = 0;
 
             decimal currentStudentGrade = 0;
 
             int gradedAssignments = 0;
+
+            decimal examScore = 0;
+
+            // variables added to handle extra credit
+            int extraCredit = 0;
+            decimal extraCreditPoints = 0;
 
             /* 
             the inner foreach loop sums assignment scores
@@ -81,13 +87,25 @@ public static class ArrayChallenge
                 gradedAssignments += 1;
 
                 if (gradedAssignments <= examAssignments)
+                {
                     sumAssignmentScores += score;
-
+                    examScore += score;
+                }
                 else
+                {
+                    extraCredit += score;
                     sumAssignmentScores += score / 10;
+                }
+                    
             }
 
-            currentStudentGrade = (decimal)(sumAssignmentScores) / examAssignments;
+            // total exam score average
+            examScore /= examAssignments;
+            // 10% of extra credit point tally, divided by # of assignments
+            extraCreditPoints = (decimal)(extraCredit * .10) / examAssignments;
+            // extra credit assignment average
+            extraCredit /= gradedAssignments - examAssignments;
+            currentStudentGrade = examScore + extraCreditPoints;
 
             if (currentStudentGrade >= 97)
                 currentStudentLetterGrade = "A+";
@@ -127,11 +145,8 @@ public static class ArrayChallenge
 
             else
                 currentStudentLetterGrade = "F";
-
-            // Student         Grade
-            // Sophia:         92.2    A-
             
-            Console.WriteLine($"{currentStudent}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}");
+            Console.WriteLine($"{currentStudent}\t\t{examScore}\t\t{currentStudentGrade}\t{currentStudentLetterGrade}\t{extraCredit} ({extraCreditPoints} pts)");
         }
 
         // required for running in VS Code (keeps the Output windows open to view results)
