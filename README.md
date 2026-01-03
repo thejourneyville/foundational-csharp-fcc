@@ -14,5 +14,5 @@ Exercises and challenge projects from the **FreeCodeCamp Foundational C# with Mi
 - 7. Object-Oriented Programming in C#
 
 ## Progress
-- Module 3: In progress (control flow, loops, foreach/if-else array challenges)
+- Module 3: In progress (Evaluate Boolean expressions to make decisions in C#)
 - Target completion: Q1 2026
