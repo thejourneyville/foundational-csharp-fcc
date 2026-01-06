@@ -1,6 +1,6 @@
 ﻿// Exercises/Program.cs
 using Exercises.ControlFlow;
 
-Console.WriteLine("Module 3: foreach + if-else array challenge");
+Console.WriteLine("Module 3: Evaluate Boolean expressions to make decisions in C# ");
 Console.ReadLine();
-ArrayChallenge.Run();
+BooleanOperations.Run();
