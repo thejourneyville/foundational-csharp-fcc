@@ -35,6 +35,15 @@ namespace Exercises.ControlFlow
             roll1 = roll.Next(1, 7);
             roll2 = roll.Next(1, 7);
             Console.WriteLine($"{roll1} >= {roll2}: {roll1 >= roll.Next(1, 7)}");
+
+            // using Contains
+            string example1 = "The quick brown fox jumps over the lazy dog.";
+            Console.WriteLine($"Contains: \"The quick brown fox jumps over the lazy dog\".Contains(\"fox\") {example1.Contains("fox")}");
+
+            // logical negation
+            string example2 = "The quick brown fox jumps over the lazy dog.";
+            Console.WriteLine($"Contains: !\"The quick brown fox jumps over the lazy dog\".Contains(\"wolf\") {!example2.Contains("wolf")}");
+
         }
 
     }
