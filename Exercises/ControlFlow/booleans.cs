@@ -44,6 +44,12 @@ namespace Exercises.ControlFlow
             string example2 = "The quick brown fox jumps over the lazy dog.";
             Console.WriteLine($"Contains: !\"The quick brown fox jumps over the lazy dog\".Contains(\"wolf\") {!example2.Contains("wolf")}");
 
+            // Conditional Operator
+            int roll3 = roll.Next(1, 7);
+            string rollResult = roll3 > 3 ? "Greater than 3" : "3 or less"; 
+            Console.WriteLine($"Result ({roll3}): {rollResult}");
+
+
         }
 
     }
