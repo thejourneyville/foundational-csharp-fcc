@@ -13,5 +13,5 @@ Exercises and challenge projects from the **FreeCodeCamp Foundational C# with Mi
 - 6. Debug C# console applications  
 
 ## Progress
-- Module 3: In progress (Control Variable Scope and Logic Using Code Blocks in C#)
+- Module 3: In progress (Guided Project - Develop Conditional Branching and Looping Structures in C#)
 - Target completion: Q1 2026
