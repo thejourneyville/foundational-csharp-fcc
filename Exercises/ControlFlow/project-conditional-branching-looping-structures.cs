@@ -3,6 +3,7 @@ using System.Dynamic;
 using System.Reflection.Metadata;
 using System;
 using System.IO;
+using System.Globalization;
 
 namespace Exercises.ControlFlow
 {
@@ -10,7 +11,7 @@ namespace Exercises.ControlFlow
     {
         public static void Run()
         {
-            
+
             // the ourAnimals array will store the following: 
             string animalSpecies = "";
             string animalID = "";
@@ -297,9 +298,52 @@ namespace Exercises.ControlFlow
 
                     case "3":
                         // Ensure animal ages and physical descriptions are complete
-                        Console.WriteLine("Challenge Project - please check back soon to see progress.");
-                        Console.WriteLine("Press the Enter key to continue.");
-                        readResult = Console.ReadLine();
+                        for (int i = 0; i < maxPets; i++)
+                        {
+                            if (ourAnimals[i, 0] != "ID #: ")
+                            {
+                                bool ageBlank = ourAnimals[i, 2] == "Age: " || ourAnimals[i, 2] == "Age: ?";
+                                bool descriptionBlank = ourAnimals[i, 4] == "Physical description: " || ourAnimals[i, 4] == "Physical description: ?";
+                                string petID = ourAnimals[i, 0][6..];
+
+                                if (ageBlank)
+                                {
+                                    do
+                                    {
+                                        Console.WriteLine($"Enter age for pet ID({petID}):");
+                                        readResult = Console.ReadLine();
+                                        if (readResult != null)
+                                        {
+                                            validEntry = int.TryParse(readResult, out petAge);
+                                            if (validEntry)
+                                            {
+                                                ourAnimals[i, 2] = "Age: " + petAge.ToString();
+                                                Console.WriteLine($"pet ID({petID}) age updated");
+                                            }
+                                        }
+                                    } while (!validEntry);
+                                }
+
+                                if (descriptionBlank)
+                                {
+                                    do
+                                    {
+                                        Console.WriteLine($"Enter physical description for pet ID({petID}):");
+                                        readResult = Console.ReadLine();
+                                        if (readResult != null)
+                                        {
+                                            validEntry = readResult != "" || readResult != "?" && readResult.Length > 0;
+                                            if (validEntry)
+                                            {
+                                                string petPhysicalDescription = readResult;
+                                                ourAnimals[i, 4] = "Physical description: " + petPhysicalDescription;
+                                                Console.WriteLine($"pet ID({petID}) Physical Description updated");
+                                            }
+                                        }
+                                    } while (!validEntry);
+                                }
+                            }
+                        }
                         break;
 
                     case "4":
