@@ -1,6 +1,6 @@
 ﻿// Exercises/Program.cs
-using Exercises.ControlFlow;
+using Exercises.VariableData;
 
-Console.WriteLine("Module 3 - Add Logic to C# Console Applications: Guided Project - Develop Conditional Branching and Looping Structures in C#");
+Console.WriteLine("Module 4 - Choose the Correct Data Type in Your C# Code");
 Console.ReadLine();
-ConditionalBranchingLoopingStructures.Run();
+ChooseTheCorrectDataType.Run();

@@ -7,11 +7,11 @@ Exercises and challenge projects from the **FreeCodeCamp Foundational C# with Mi
 ## Course Modules
 - 1. Write your first code using C#  
 - 2. Store and retrieve data using literal values  
-- **3. Add logic to C# console applications** ← **Started here (current)**
-- 4. Work with Variable Data in C# Console Applications
+- 3. Add logic to C# console application (started here)
+- **4. Work with Variable Data in C# Console Applications** ← **(current)**
 - 5. Create methods in C# console applications  
 - 6. Debug C# console applications  
 
 ## Progress
-- Module 3: In progress (Guided Project - Develop Conditional Branching and Looping Structures in C#)
+- Module 4: In progress - Choose the Correct Data Type in Your C# Code
 - Target completion: Q1 2026

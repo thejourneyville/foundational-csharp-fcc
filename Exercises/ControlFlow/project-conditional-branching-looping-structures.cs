@@ -221,7 +221,7 @@ namespace Exercises.ControlFlow
                                     animalPhysicalDescription = readResult.ToLower();
                                     if (animalPhysicalDescription == "")
                                     {
-                                        animalPhysicalDescription = "tbd";
+                                        animalPhysicalDescription = "?";
                                     }
                                 }
                             } while (validEntry == false);
@@ -237,7 +237,7 @@ namespace Exercises.ControlFlow
                                     animalPersonalityDescription = readResult.ToLower();
                                     if (animalPersonalityDescription == "")
                                     {
-                                        animalPersonalityDescription = "tbd";
+                                        animalPersonalityDescription = "?";
                                     }
                                 }
                             } while (validEntry == false);
@@ -253,7 +253,7 @@ namespace Exercises.ControlFlow
                                     animalNickname = readResult.ToLower();
                                     if (animalNickname == "")
                                     {
-                                        animalNickname = "tbd";
+                                        animalNickname = "?";
                                     }
                                 }
                             } while (validEntry == false);
@@ -344,11 +344,63 @@ namespace Exercises.ControlFlow
                                 }
                             }
                         }
+                        Console.WriteLine("Age and physical description fields are complete for all of our friends.");
+                        Console.WriteLine("Press any key to continue");
+                        Console.ReadLine();
                         break;
 
                     case "4":
                         // Ensure animal nicknames and personality descriptions are complete
-                        Console.WriteLine("Challenge Project - please check back soon to see progress.");
+
+                        for (int i = 0; i < maxPets; i++)
+                        {
+
+                            if (ourAnimals[i, 0] != "ID #: ")
+                            {
+                                int petIdLength = ourAnimals[i, 0].Length;
+                                string petId = ourAnimals[i, 0][(petIdLength-2)..];
+                                bool hasNickname = ourAnimals[i, 3] != "Nickname: " && ourAnimals[i, 3] != "Nickname: ?";
+                                bool hasPersonality = ourAnimals[i, 5] != "Personality: " && ourAnimals[i, 5] != "Personality: ?";
+
+                                if (!hasNickname)
+                                {
+                                    do
+                                    {
+                                        Console.WriteLine($"Enter the nickname for pet ID ({petId})");
+                                        string? userInput = Console.ReadLine();
+                                        if (userInput != null && userInput != "")
+                                        {
+                                            string petNickname = userInput;
+                                            Console.WriteLine($"Updating ({petId}) with the nickname: {petNickname}");
+                                            ourAnimals[i, 3] = "Nickname: " + petNickname;
+                                            hasNickname = true;
+                                            Console.WriteLine("Nickname Updated...");
+                                        }
+                                    } while (!hasNickname);
+
+                                }
+
+                                if (!hasPersonality)
+                                {
+                                    do
+                                    {
+                                        Console.WriteLine($"Enter the personality for pet ID ({petId})");
+                                        string? userInput = Console.ReadLine();
+                                        if (userInput != null && userInput != "")
+                                        {
+                                            string petPersonality = userInput;
+                                            Console.WriteLine($"Updating ({petId}) with the personality: {petPersonality}");
+                                            ourAnimals[i, 5] = "Personality: " + petPersonality;
+                                            hasPersonality = true;
+                                            Console.WriteLine("Personality Updated...");
+                                        }
+                                    } while (!hasPersonality);
+
+                                }
+
+                            }
+                        }
+                        Console.WriteLine("All pets in database now have nicknames and personality descriptions.");
                         Console.WriteLine("Press the Enter key to continue.");
                         readResult = Console.ReadLine();
                         break;
