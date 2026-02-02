@@ -13,5 +13,5 @@ Exercises and challenge projects from the **FreeCodeCamp Foundational C# with Mi
 - 6. Debug C# console applications  
 
 ## Progress
-- Module 4: In progress - Choose the Correct Data Type in Your C# Code
+- Module 4: In progress - Convert data types using casting and conversion techniques in C#
 - Target completion: Q1 2026
