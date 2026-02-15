@@ -10,8 +10,8 @@ namespace Exercises.VariableData
             string[] values = { "12.3", "45", "ABC", "11", "DEF"};
             
             string message = "";
-            float sum = 0;
-            float result = 0;
+            float sum = 0.0F;
+            float result;
             
             foreach (string value in values)
             {
