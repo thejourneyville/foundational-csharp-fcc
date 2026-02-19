@@ -13,5 +13,5 @@ Exercises and challenge projects from the **FreeCodeCamp Foundational C# with Mi
 - 6. Debug C# console applications  
 
 ## Progress
-- Module 4: In progress - Convert data types using casting and conversion techniques in C#
+- Module 4: In progress - Perform Operations on Arrays Using Helper Methods in C#
 - Target completion: Q1 2026
