@@ -48,6 +48,31 @@ namespace Exercises.VariableData
                 Console.WriteLine($"Error: {ex}");
             }
 
+            Console.WriteLine("");
+            Console.WriteLine("using Array.Resize()....");
+            Array.Resize(ref pallets, 6);
+            Console.WriteLine($"Resized pallets, now has:  {pallets.Length} indices.");
+            pallets[4] = "C01";
+            pallets[5] = "C02";
+
+            foreach (var pallet in pallets)
+            {
+                Console.WriteLine($"-- {pallet}");
+            }
+
+            Console.WriteLine("");
+            Console.WriteLine("removing indices with Array.Resize()...");
+            Array.Resize(ref pallets, 3);
+            foreach (var pallet in pallets)
+            {
+                Console.WriteLine($"-- {pallet}");
+            }
+            Array.Resize(ref pallets, 1);
+            foreach (var pallet in pallets)
+            {
+                Console.WriteLine($"-- {pallet}");
+            }
+
         }
     }
 }
