@@ -19,7 +19,7 @@ namespace Exercises.VariableData
             string pangram = "The quick brown fox jumps over the lazy dog.";
 
             string[] words = pangram.Split(" ");
-            string output = "";
+            string[] output = new string[words.Length];
             int index = 0;
 
             foreach (string word in words)
@@ -31,14 +31,14 @@ namespace Exercises.VariableData
                 
                     if (charWord != null)
                     {
-                        output += string.Join("", charWord) + " ";
+                        output[index] = new string(charWord);
                     }
                     
                     index++;
                 }
             }
 
-            Console.WriteLine(output);
+            Console.WriteLine(String.Join(" ", output));
         }
     }
 }
